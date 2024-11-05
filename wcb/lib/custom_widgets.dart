@@ -52,6 +52,15 @@ class MyAppBar extends StatelessWidget{
         ),
        );
   }
+
+
+
+
+
+
+
+
+  }
 //class MyText extends StatelessWidget{
   //  final String textput;
    // final Icon icon;
@@ -63,4 +72,21 @@ class MyAppBar extends StatelessWidget{
 
 
 
-}
+
+
+
+class MyTextInput extends StatelessWidget{
+  final String label;
+  final String Password;
+  final Icon iconi;
+
+  MyTextInput({required this.label, required this.Password,required this.iconi });
+  
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: double.infinity,
+        margin: EdgeInsets.fromLTRB(5.0, 2.0, 5.0, 2.0),
+        padding: EdgeInsets.fromLTRB(1, 2, 1, 2),
+        child:Row(children: [Icon(iconi as IconData?),Text(label, textAlign: TextAlign.center,)],),);
+  }}

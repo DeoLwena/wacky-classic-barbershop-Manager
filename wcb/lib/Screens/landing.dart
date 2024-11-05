@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wcb/Screens/signupmid.dart';
+import 'package:wcb/Screens/SignUp/signupmid.dart';
 import 'package:wcb/custom_widgets.dart' as wigi;
-import 'loginmid.dart';
+import 'Login/loginmid.dart';
 
 class Landing extends StatelessWidget {
   const Landing({super.key});

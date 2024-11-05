@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wcb/Screens/adminlogin.dart';
-import 'package:wcb/Screens/managerlogin.dart';
+import 'package:wcb/Screens/Login/adminlogin.dart';
+import 'package:wcb/Screens/Login/managerlogin.dart';
 import 'package:wcb/custom_widgets.dart' as wigi;
 
 class Landingl extends StatelessWidget {
