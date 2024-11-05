@@ -6,9 +6,14 @@ class AdminLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(elevation: 7.0, title: const Text("Login Admin",style: TextStyle(color: Colors.white),),backgroundColor: wigi.Blue,),
-      body: const Center(child: Text('Welcom Admini'),),
-
+    return Scaffold(
+      appBar: wigi.MyAppBar(
+        kichwa: 'Login Admin',
+        rangi: Colors.blue, // Use Colors.blue or your custom color
+      ),
+      body: Center(
+        child: Text('Admin Login Page'),
+      ),
     );
   }
 }

@@ -35,32 +35,34 @@ class CustomButton extends StatelessWidget {
   }
 }
 
-class MyAppBar extends StatelessWidget{
+class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
   final String kichwa;
   final Color rangi;
 
   MyAppBar({required this.kichwa, required this.rangi});
+
+  @override
+  _MyAppBarState createState() => _MyAppBarState();
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+}
+
+class _MyAppBarState extends State<MyAppBar> {
   @override
   Widget build(BuildContext context) {
-    return  AppBar(
-        backgroundColor:rangi,
-        elevation: 7.0,
-        shadowColor: Colors.grey,
-        title: Text(
-          kichwa,
-          style: TextStyle(color: Colors.white),
-        ),
-       );
+    return AppBar(
+      backgroundColor: widget.rangi,
+      elevation: 7.0,
+      shadowColor: Colors.grey,
+      title: Text(
+        widget.kichwa,
+        style: TextStyle(color: Colors.white),
+      ),
+    );
   }
+}
 
-
-
-
-
-
-
-
-  }
 //class MyText extends StatelessWidget{
   //  final String textput;
    // final Icon icon;

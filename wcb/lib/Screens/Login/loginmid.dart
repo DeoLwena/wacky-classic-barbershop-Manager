@@ -10,15 +10,7 @@ class Landingl extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar:  AppBar(
-        backgroundColor: wigi.Red,
-        elevation: 7.0,
-        shadowColor: Colors.grey,
-        title: const Text(
-          'Log In',
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
+      appBar:  wigi.MyAppBar(kichwa: 'Login', rangi: wigi.Blue),
       body: Column(
         children: [Container(height: 200.0,),
           wigi.CustomButton(

@@ -16,16 +16,16 @@ class WcB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // Add this line to remove the debug banner
       initialRoute: '/',
-      routes: {'/':(context)=>Landing(),
-                '/loginMid':(context)=>Landing(),
-                '/Landings':(context)=>Landings(),
-                 '/Landingl':(context)=>Landingl(),
-                  '/AdminLogin':(context)=>AdminLogin(),
-                  '/managerlogin':(context)=>Managerlogin(),
-
+      routes: {
+        '/': (context) => Landing(),
+        '/loginMid': (context) => Landing(),
+        '/Landings': (context) => Landings(),
+        '/Landingl': (context) => Landingl(),
+        '/AdminLogin': (context) => AdminLogin(),
+        '/managerlogin': (context) => Managerlogin(),
       },
-
     );
   }
 }
