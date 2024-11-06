@@ -9,7 +9,7 @@ class AdminLogin extends StatelessWidget {
     return Scaffold(
       appBar: wigi.MyAppBar(
         kichwa: 'Login Admin',
-        rangi: Colors.blue, // Use Colors.blue or your custom color
+        rangi: wigi.Blue, // Use Colors.blue or your custom color
       ),
       body: Center(
         child: Text('Admin Login Page'),
