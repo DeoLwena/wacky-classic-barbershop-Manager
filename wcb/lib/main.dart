@@ -4,7 +4,12 @@ import 'Screens/landing.dart';
 import 'Screens/Login/loginmid.dart';
 import 'Screens/Login/adminlogin.dart';
 import 'Screens/Login//managerlogin.dart';
-
+import 'Screens/Login/recoverycodeAdmin.dart';
+import 'Screens/Login//forgotpasswordAdmin.dart';
+import 'Screens/Login/forgotpasswordManager.dart';
+import 'Screens/Login/recoverycodeManager.dart';
+import 'Screens/Login/changepasswordManager.dart';
+import 'Screens/apps/home.dart';
 void main() {
   runApp(const WcB());
 }
@@ -25,6 +30,13 @@ class WcB extends StatelessWidget {
         '/Landingl': (context) => Landingl(),
         '/AdminLogin': (context) => AdminLogin(),
         '/managerlogin': (context) => Managerlogin(),
+        '/recoverycode': (context) => Confirmation(),
+        '/adminforgotpassword': (context) => Recovery(),
+        '/forgotpasswordManager':(context) => Recoverym(),
+        '/recoverycodeManager':(context) => Confirmationm(),
+        '/changepasswordmanager':(context) => Newpasswordm(),
+        '/home':(context) => Home(),
+
       },
     );
   }

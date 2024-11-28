@@ -9,7 +9,10 @@ class CustomButton extends StatelessWidget {
   final VoidCallback bonyeza;
 
   const CustomButton(
-      {required this.rangi, required this.neno, required this.bonyeza});
+      {super.key,
+      required this.rangi,
+      required this.neno,
+      required this.bonyeza});
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +24,13 @@ class CustomButton extends StatelessWidget {
         onTap: bonyeza,
         child: Container(
           width: double.infinity,
-          margin: EdgeInsets.fromLTRB(5.0, 2.0, 5.0, 2.0),
-          padding: EdgeInsets.fromLTRB(1, 2, 1, 2),
+          margin: const EdgeInsets.fromLTRB(5.0, 2.0, 5.0, 2.0),
+          padding: const EdgeInsets.fromLTRB(1, 2, 1, 2),
           color: rangi,
           child: Text(
             neno,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 20.0, color: Colors.white),
+            style: const TextStyle(fontSize: 20.0, color: Colors.white),
           ),
         ),
       ),
@@ -39,7 +42,7 @@ class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
   final String kichwa;
   final Color rangi;
 
-  MyAppBar({required this.kichwa, required this.rangi});
+  const MyAppBar({required this.kichwa, required this.rangi});
 
   @override
   _MyAppBarState createState() => _MyAppBarState();
@@ -63,32 +66,89 @@ class _MyAppBarState extends State<MyAppBar> {
   }
 }
 
-//class MyText extends StatelessWidget{
-  //  final String textput;
-   // final Icon icon;
-
-    //Widget build(BuildContext context){
-    //  return const Card();
-  //}
- // }
 
 
+//INSIDE APP BAR
 
+class InsideAppBar extends StatefulWidget implements PreferredSizeWidget {
 
+  final Color rangi;
 
+  const InsideAppBar({required this.rangi});
 
-class MyTextInput extends StatelessWidget{
-  final String label;
-  final String Password;
-  final Icon iconi;
+  @override
+  _InsideAppBarState createState() => _InsideAppBarState();
 
-  MyTextInput({required this.label, required this.Password,required this.iconi });
-  
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+}
+
+class _InsideAppBarState extends State<InsideAppBar> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: double.infinity,
-        margin: EdgeInsets.fromLTRB(5.0, 2.0, 5.0, 2.0),
-        padding: EdgeInsets.fromLTRB(1, 2, 1, 2),
-        child:Row(children: [Icon(iconi as IconData?),Text(label, textAlign: TextAlign.center,)],),);
-  }}
+    return AppBar(
+      leadingWidth: 30,
+      backgroundColor: widget.rangi,
+      elevation: 7.0,
+      shadowColor: Colors.grey,
+      title: Image(
+        image: AssetImage('wcb-removebg-preview.png'),
+      ),
+    );
+  }
+}
+
+
+class MyTextInput extends StatefulWidget {
+  final String label;
+  final IconData iconi;
+  final String hintText;
+  final Color textcolor;
+
+  MyTextInput(
+      {required this.label, required this.iconi, required this.hintText, required this.textcolor});
+
+  @override
+  State<MyTextInput> createState() => _MyTextInputState();
+}
+
+class _MyTextInputState extends State<MyTextInput> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(widget.label,
+                style: TextStyle(
+                    color: widget.textcolor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold)),
+            const SizedBox(
+              width: 8.0,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black),
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Icon(widget.iconi, color: Blue),
+                  ),
+                  Expanded(
+                      child: TextField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none, hintText: widget.hintText),
+                  ))
+                ],
+              ),
+            )
+          ],
+        ));
+  }
+}
