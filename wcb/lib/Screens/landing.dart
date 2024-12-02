@@ -9,38 +9,40 @@ class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Image(
-            image: AssetImage('images/alpha.png'),
-          ),
-          wigi.CustomButton(
-            rangi: wigi.Blue,
-            neno: 'Sign Up',
-            bonyeza: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Landings(),
-                ),
-              );
-            },
-          ),
-          wigi.CustomButton(
-            rangi: wigi.Red,
-            neno: 'Log In',
-            bonyeza: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const Landingl(),
-                ),
-              );
-            },
-          ),
-        ],
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Image(
+              image: AssetImage('images/alpha.png'),
+            ),
+            wigi.CustomButton(
+              rangi: wigi.Blue,
+              neno: 'Sign Up',
+              bonyeza: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Landings(),
+                  ),
+                );
+              },
+            ),
+            wigi.CustomButton(
+              rangi: wigi.Red,
+              neno: 'Log In',
+              bonyeza: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Landingl(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -164,19 +164,23 @@ class MyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {},
-      child: Card(
-        shadowColor: Colors.grey,
-        child: Column(
-          children: [
-            Image(
-              image: AssetImage('images/$imagename'),
-              width: 190,
-              height: 190,
-            ),
-            Text(Huduma)
-          ],
-        ),
-      ),
-    );
+       child: Card(
+          shadowColor: Colors.grey,
+          child:Padding(padding: EdgeInsets.all(20),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ClipRRect(borderRadius: BorderRadius.circular(30),
+                child: Image(
+                  image: AssetImage('images/$imagename'),
+                  width: 150,
+                  height: 150,
+                ),
+              ),
+              Text(Huduma)
+            ],
+          ),
+        ),)
+      );
   }
 }
