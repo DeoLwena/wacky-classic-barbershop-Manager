@@ -66,12 +66,9 @@ class _MyAppBarState extends State<MyAppBar> {
   }
 }
 
-
-
 //INSIDE APP BAR
 
 class InsideAppBar extends StatefulWidget implements PreferredSizeWidget {
-
   final Color rangi;
 
   const InsideAppBar({required this.rangi});
@@ -87,17 +84,18 @@ class _InsideAppBarState extends State<InsideAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leadingWidth: 30,
+      centerTitle: true,
       backgroundColor: widget.rangi,
       elevation: 7.0,
       shadowColor: Colors.grey,
-      title: Image(
-        image: AssetImage('wcb-removebg-preview.png'),
+      title: const Image(
+        height: 50.0,
+        alignment: Alignment.center,
+        image: const AssetImage('images/alpha.png'),
       ),
     );
   }
 }
-
 
 class MyTextInput extends StatefulWidget {
   final String label;
@@ -106,7 +104,10 @@ class MyTextInput extends StatefulWidget {
   final Color textcolor;
 
   MyTextInput(
-      {required this.label, required this.iconi, required this.hintText, required this.textcolor});
+      {required this.label,
+      required this.iconi,
+      required this.hintText,
+      required this.textcolor});
 
   @override
   State<MyTextInput> createState() => _MyTextInputState();
@@ -150,5 +151,32 @@ class _MyTextInputState extends State<MyTextInput> {
             )
           ],
         ));
+  }
+}
+
+class MyCard extends StatelessWidget {
+  final String imagename;
+  final String Huduma;
+
+  MyCard({required this.imagename, required this.Huduma});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () async {},
+      child: Card(
+        shadowColor: Colors.grey,
+        child: Column(
+          children: [
+            Image(
+              image: AssetImage('images/$imagename'),
+              width: 190,
+              height: 190,
+            ),
+            Text(Huduma)
+          ],
+        ),
+      ),
+    );
   }
 }

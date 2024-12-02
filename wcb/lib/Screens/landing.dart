@@ -14,7 +14,7 @@ class Landing extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Image(
-            image: AssetImage('images/wcb.jpeg'),
+            image: AssetImage('images/alpha.png'),
           ),
           wigi.CustomButton(
             rangi: wigi.Blue,

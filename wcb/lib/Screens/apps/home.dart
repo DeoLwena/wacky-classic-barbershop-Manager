@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wcb/custom_widgets.dart' as wigi;
+import 'InsideHome.dart' as inside;
 
 void main() {
   runApp(Home());
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    Center(child: Text("Home Page")),
+    Center(child: inside.Insidehome()),
     Center(child: Text("Stock")),
     Center(child: Text("services")),
     Center(child: Text("Report")),
