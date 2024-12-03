@@ -30,7 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
     Center(child: Text("Report")),
     inside.InsideServices(),
     Center(child: Text("Report")),
+    Center(child: Text("stocks")),
     Center(child: Text("settings")),
+
   ];
 
   void _onTabTapped(int index) {
@@ -65,9 +67,14 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Reports',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.warehouse),
+            label: 'Stock'),
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
           ),
+
+
         ],
       ),
     );
