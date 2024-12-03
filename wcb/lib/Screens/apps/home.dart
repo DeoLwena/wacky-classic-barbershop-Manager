@@ -26,8 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
+    insidehome.InsideServices(),
     Center(child: Text("Report")),
-    Center(child: Text("Stock")),
     inside.InsideServices(),
     Center(child: Text("Report")),
     Center(child: Text("settings")),
