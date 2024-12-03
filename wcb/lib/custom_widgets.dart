@@ -84,16 +84,22 @@ class _InsideAppBarState extends State<InsideAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      centerTitle: true,
-      backgroundColor: widget.rangi,
-      elevation: 7.0,
-      shadowColor: Colors.grey,
-      title: const Image(
-        height: 50.0,
-        alignment: Alignment.center,
-        image: const AssetImage('images/alpha.png'),
-      ),
-    );
+        centerTitle: true,
+        backgroundColor: widget.rangi,
+        elevation: 7.0,
+        shadowColor: Colors.grey,
+        title: const Image(
+          height: 50.0,
+          alignment: Alignment.center,
+          image: const AssetImage('images/alpha.png'),
+        ),
+        actions: [
+          Padding(
+              padding: EdgeInsets.all(1.0),
+                child: CircleAvatar(
+                    foregroundImage:AssetImage('images/g.jpeg')),
+              )
+        ]);
   }
 }
 
@@ -116,6 +122,9 @@ class MyTextInput extends StatefulWidget {
 class _MyTextInputState extends State<MyTextInput> {
   @override
   Widget build(BuildContext context) {
+    final screenheight = MediaQuery.of(context).size.height;
+    final screenwidth = MediaQuery.of(context).size.width;
+
     return Padding(
         padding: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
         child: Column(
@@ -126,8 +135,8 @@ class _MyTextInputState extends State<MyTextInput> {
                     color: widget.textcolor,
                     fontSize: 20,
                     fontWeight: FontWeight.bold)),
-            const SizedBox(
-              width: 8.0,
+            SizedBox(
+              width: screenwidth * 0.5,
             ),
             Container(
               decoration: BoxDecoration(
@@ -138,7 +147,7 @@ class _MyTextInputState extends State<MyTextInput> {
               child: Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
                     child: Icon(widget.iconi, color: Blue),
                   ),
                   Expanded(
@@ -162,25 +171,31 @@ class MyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenwidth = MediaQuery.of(context).size.width;
+    final screenheight = MediaQuery.of(context).size.height;
+
     return InkWell(
-      onTap: () async {},
-       child: Card(
+        onTap: () async {},
+        child: Card(
           shadowColor: Colors.grey,
-          child:Padding(padding: EdgeInsets.all(20),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ClipRRect(borderRadius: BorderRadius.circular(30),
-                child: Image(
-                  image: AssetImage('images/$imagename'),
-                  width: 150,
-                  height: 150,
+          child: Padding(
+            padding: EdgeInsets.all(5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image(
+                    image: AssetImage('images/$imagename'),
+                    height: screenheight * 0.25,
+                    width: screenwidth * 0.5,
+                  ),
                 ),
-              ),
-              Text(Huduma)
-            ],
+                Text(Huduma)
+              ],
+            ),
           ),
-        ),)
-      );
+        ));
   }
 }
