@@ -93,13 +93,15 @@ class _InsideAppBarState extends State<InsideAppBar> {
           alignment: Alignment.center,
           image: const AssetImage('images/alpha.png'),
         ),
-        actions: [
-          Padding(
+
+
+        actions: [Padding(
               padding: EdgeInsets.all(1.0),
                 child: CircleAvatar(
                     foregroundImage:AssetImage('images/g.jpeg')),
               )
-        ]);
+        ]
+    );
   }
 }
 
@@ -178,24 +180,64 @@ class MyCard extends StatelessWidget {
         onTap: () async {},
         child: Card(
           shadowColor: Colors.grey,
+
+
           child: Padding(
-            padding: EdgeInsets.all(5),
+            padding: EdgeInsets.all(4),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+              Container(height: screenheight*0.02,),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30),
                   child: Image(
                     image: AssetImage('images/$imagename'),
-                    height: screenheight * 0.25,
+                    height: screenheight * 0.3,
                     width: screenwidth * 0.5,
                   ),
                 ),
-                Text(Huduma)
+                Container(height: screenheight*0.04,),
+                Text(Huduma,style: TextStyle(color: Blue, fontWeight: FontWeight.bold, fontSize: screenwidth* 0.04),)
+                ,
+                Container(height: screenheight*0.01,),
               ],
             ),
           ),
         ));
+  }
+}
+
+
+class Searchbar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final screenheight = MediaQuery.of(context).size.height;
+    final screenwidth = MediaQuery.of(context).size.width;
+
+    Searchbar();
+
+    return  Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(height: screenheight * 0.025),
+          Container(
+              height: screenheight * 0.04,
+              width: screenwidth *0.5,
+              child: SearchBar(
+                hintText: 'Search',
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(screenheight * 1),
+                      side: BorderSide(
+                        color: Blue,
+                        width: screenwidth * 0.001,
+                      )),
+                ),
+              ))
+        ],
+
+    );
   }
 }

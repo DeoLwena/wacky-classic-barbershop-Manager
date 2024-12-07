@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wcb/custom_widgets.dart' as wigi;
-import 'InsideServices.dart' as inside;
-import 'InsideHome.dart' as insidehome;
+import 'services/InsideServices.dart' as inside;
+import 'home/InsideHome.dart' as home;
+import 'reports/InsideReports.dart' as Reports;
+
 
 
 void main() {
@@ -11,8 +13,10 @@ void main() {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomeScreen(),
+    return SafeArea(
+      child: MaterialApp(
+        home: HomeScreen(),
+      ),
     );
   }
 }
@@ -26,10 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    insidehome.InsideServices(),
+    home.InsideHome(),
     Center(child: Text("Report")),
     inside.InsideServices(),
-    Center(child: Text("Report")),
+    Reports.InsideReports(),
     Center(child: Text("stocks")),
     Center(child: Text("settings")),
 

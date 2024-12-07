@@ -4,23 +4,17 @@ import 'package:wcb/custom_widgets.dart' as wigi;
 class InsideServices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     final screenheight =MediaQuery.of(context).size.height;
     final screenwidth =MediaQuery.of(context).size.width;
+
     return MaterialApp(
       home: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [Container(height: screenheight * 0.025),
-            Row(children: [
-              Flexible(
-                child: Text(
-                  textAlign: TextAlign.center,
-                  'Hello Manager,\nWelcome to WCB',
-                  style: TextStyle(color: wigi.Blue, fontSize: 13),
-                ),
-              ),
-            Container(width: screenwidth * 0.2)]),
+
             Container(height: screenheight * 0.02),
             Row(
               children: [Flexible(child:
