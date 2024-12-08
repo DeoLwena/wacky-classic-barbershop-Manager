@@ -210,12 +210,14 @@ class MyCard extends StatelessWidget {
 
 
 class Searchbar extends StatelessWidget {
+  final String hint;
+
+  Searchbar({required this.hint});
   @override
   Widget build(BuildContext context) {
     final screenheight = MediaQuery.of(context).size.height;
     final screenwidth = MediaQuery.of(context).size.width;
 
-    Searchbar();
 
     return  Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -226,7 +228,7 @@ class Searchbar extends StatelessWidget {
               height: screenheight * 0.04,
               width: screenwidth *0.5,
               child: SearchBar(
-                hintText: 'Search',
+                hintText: hint,
                 shape: MaterialStateProperty.all(
                   RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(screenheight * 1),

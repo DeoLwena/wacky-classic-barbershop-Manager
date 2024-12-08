@@ -3,6 +3,8 @@ import 'package:wcb/custom_widgets.dart' as wigi;
 import 'services/InsideServices.dart' as inside;
 import 'home/InsideHome.dart' as home;
 import 'reports/InsideReports.dart' as Reports;
+import 'inventory/InsideStock.dart' as Stock;
+import 'settings/InsideSettings.dart' as Settings;
 
 
 
@@ -34,8 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
     Center(child: Text("Report")),
     inside.InsideServices(),
     Reports.InsideReports(),
-    Center(child: Text("stocks")),
-    Center(child: Text("settings")),
+    Stock.InsideStock(),
+    Settings.InsideSettings(),
 
   ];
 

@@ -18,7 +18,7 @@ class _InsideHomeState extends State<InsideHome> {
         home: SingleChildScrollView(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children:[ wigi.Searchbar(),Container(height: screenheight*0.05),
+              children:[ wigi.Searchbar(hint: 'Search',),Container(height: screenheight*0.05),
           Column(
             children: [
               Row(children: [

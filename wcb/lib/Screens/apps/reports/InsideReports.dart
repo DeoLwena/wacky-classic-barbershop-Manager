@@ -14,35 +14,22 @@ class InsideReports extends StatelessWidget {
         home: SingleChildScrollView(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children:[ wigi.Searchbar(),Container(height: screenheight*0.05),
+              children:[ wigi.Searchbar(hint: 'Search Report',),Container(height: screenheight*0.05),
                 Column(
                   children: [
                     Row(children: [
-                      Flexible(
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'Hello Manager,\nWelcome to WCB',
-                          style: TextStyle(color: wigi.Blue, fontSize: 13),
-                        ),
-                      ),
                       Container(width: screenwidth * 0.2)])
                     ,
                     Row(
                       children: [
-                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'Profile')),
-                        Flexible(child: wigi.MyCard(imagename: 'Serives.webp', Huduma: 'Service'))
+                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'Expenses')),
+                        Flexible(child: wigi.MyCard(imagename: 'services.jpg', Huduma: 'Loss'))
                       ],
                     ),
                     Row(
                       children: [
-                        Flexible(child: wigi.MyCard(imagename: 'report.jpeg', Huduma: 'Report')),
-                        Flexible(child: wigi.MyCard(imagename: 'stock.jpeg', Huduma: 'Stock')),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Flexible(child: wigi.MyCard(imagename: 'settings.jpeg', Huduma: 'settings')),
-                        Flexible(child: wigi.MyCard(imagename: 'alpha.png', Huduma: 'Log Out'))
+                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'Needs')),
+                        Flexible(child: wigi.MyCard(imagename: 'services.jpg', Huduma: 'Others'))
                       ],
                     ),
                   ],
