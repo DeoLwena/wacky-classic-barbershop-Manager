@@ -93,15 +93,12 @@ class _InsideAppBarState extends State<InsideAppBar> {
           alignment: Alignment.center,
           image: const AssetImage('images/alpha.png'),
         ),
-
-
-        actions: [Padding(
-              padding: EdgeInsets.all(1.0),
-                child: CircleAvatar(
-                    foregroundImage:AssetImage('images/g.jpeg')),
-              )
-        ]
-    );
+        actions: [
+          Padding(
+            padding: EdgeInsets.all(1.0),
+            child: CircleAvatar(foregroundImage: AssetImage('images/g.jpeg')),
+          )
+        ]);
   }
 }
 
@@ -180,15 +177,15 @@ class MyCard extends StatelessWidget {
         onTap: () async {},
         child: Card(
           shadowColor: Colors.grey,
-
-
           child: Padding(
             padding: EdgeInsets.all(4),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              Container(height: screenheight*0.02,),
+                Container(
+                  height: screenheight * 0.02,
+                ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30),
                   child: Image(
@@ -197,17 +194,25 @@ class MyCard extends StatelessWidget {
                     width: screenwidth * 0.5,
                   ),
                 ),
-                Container(height: screenheight*0.04,),
-                Text(Huduma,style: TextStyle(color: Blue, fontWeight: FontWeight.bold, fontSize: screenwidth* 0.04),)
-                ,
-                Container(height: screenheight*0.01,),
+                Container(
+                  height: screenheight * 0.04,
+                ),
+                Text(
+                  Huduma,
+                  style: TextStyle(
+                      color: Blue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: screenwidth * 0.04),
+                ),
+                Container(
+                  height: screenheight * 0.01,
+                ),
               ],
             ),
           ),
         ));
   }
 }
-
 
 class Searchbar extends StatelessWidget {
   final String hint;
@@ -218,28 +223,62 @@ class Searchbar extends StatelessWidget {
     final screenheight = MediaQuery.of(context).size.height;
     final screenwidth = MediaQuery.of(context).size.width;
 
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(height: screenheight * 0.025),
+        Container(
+            height: screenheight * 0.04,
+            width: screenwidth * 0.5,
+            child: SearchBar(
+              hintText: hint,
+              shape: MaterialStateProperty.all(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(screenheight * 1),
+                    side: BorderSide(
+                      color: Blue,
+                      width: screenwidth * 0.001,
+                    )),
+              ),
+            ))
+      ],
+    );
+  }
+}
 
-    return  Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(height: screenheight * 0.025),
-          Container(
-              height: screenheight * 0.04,
-              width: screenwidth *0.5,
-              child: SearchBar(
-                hintText: hint,
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(screenheight * 1),
-                      side: BorderSide(
-                        color: Blue,
-                        width: screenwidth * 0.001,
-                      )),
-                ),
-              ))
+
+
+class Badges extends StatelessWidget {
+  final IconData iconi;
+  final String head;
+  final String explanation;
+
+  Badges({
+    required this.iconi,
+    required this.head,
+    required this.explanation,
+});
+
+  @override
+  Widget build(BuildContext context) {
+
+      var screenwidth = MediaQuery.of(context).size.width;
+      var screenheight = MediaQuery.of(context).size.height;
+
+
+    return MaterialApp(
+      home: Row(
+        children: [Container(width: screenwidth * 0.01),
+          Icon(iconi, color: Blue,),
+          Container(width: screenwidth * 0.01),
+          Column(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(head, style: TextStyle(fontWeight: FontWeight.bold, fontSize: screenheight * 0.02, color: Blue),),
+              Text(explanation, style: TextStyle(fontWeight: FontWeight.bold, fontSize: screenheight * 0.02, color: Colors.black54),),
+          ],)
         ],
-
+      ),
     );
   }
 }

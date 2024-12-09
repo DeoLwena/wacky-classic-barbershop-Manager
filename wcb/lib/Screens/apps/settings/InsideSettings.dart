@@ -44,7 +44,10 @@ class InsideSettings extends StatelessWidget {
           ],
         ),
         Container(height: screenheight* 0.03,),
-        Container(color: Colors.black38,height: screenheight *0.001,)
+        Container(color: Colors.black38,height: screenheight *0.001,),
+        Container(height: screenheight* 0.03,),
+        wigi.Badges(iconi: CupertinoIcons.sun_min_fill,head: 'Theme',explanation: 'Change light mode (dark/light)',),
+        Container(height: screenheight* 0.03,),
       ]),
     ));
   }
