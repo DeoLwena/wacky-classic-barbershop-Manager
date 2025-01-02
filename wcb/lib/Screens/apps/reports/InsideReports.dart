@@ -22,14 +22,14 @@ class InsideReports extends StatelessWidget {
                     ,
                     Row(
                       children: [
-                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'Expenses')),
-                        Flexible(child: wigi.MyCard(imagename: 'services.jpg', Huduma: 'Loss'))
+                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'Expenses',function: (){})),
+                        Flexible(child: wigi.MyCard(imagename: 'services.jpg', Huduma: 'Loss',function: (){}))
                       ],
                     ),
                     Row(
                       children: [
-                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'Needs')),
-                        Flexible(child: wigi.MyCard(imagename: 'services.jpg', Huduma: 'Others'))
+                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'Needs',function: (){})),
+                        Flexible(child: wigi.MyCard(imagename: 'services.jpg', Huduma: 'Others',function: (){}))
                       ],
                     ),
                   ],

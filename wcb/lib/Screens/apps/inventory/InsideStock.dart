@@ -22,8 +22,8 @@ class InsideStock extends StatelessWidget {
                     ,
                     Row(
                       children: [
-                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'New Stock')),
-                        Flexible(child: wigi.MyCard(imagename: 'services.jpg', Huduma: 'Available Stock'))
+                        Flexible(child: wigi.MyCard(imagename: 'profile.jpg' , Huduma: 'New Stock',function: (){})),
+                        Flexible(child: wigi.MyCard(imagename: 'services.jpg', Huduma: 'Available Stock',function: (){}))
                       ],
                     )
                   ],

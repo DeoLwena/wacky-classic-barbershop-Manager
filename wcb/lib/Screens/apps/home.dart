@@ -5,6 +5,7 @@ import 'home/InsideHome.dart' as home;
 import 'reports/InsideReports.dart' as Reports;
 import 'inventory/InsideStock.dart' as Stock;
 import 'settings/InsideSettings.dart' as Settings;
+import 'profile/InsideProfile.dart' as profile;
 
 
 
@@ -25,6 +26,7 @@ class Home extends StatelessWidget {
 
 class HomeScreen extends StatefulWidget {
   @override
+  int index = 0;
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -33,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pages = [
     home.InsideHome(),
-    Center(child: Text("Report")),
+    profile.InsideProfile(),
     inside.InsideServices(),
     Reports.InsideReports(),
     Stock.InsideStock(),
@@ -52,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: wigi.InsideAppBar(rangi: Colors.white),
       body: _pages[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.redAccent,selectedItemColor: wigi.Red,unselectedItemColor: wigi.Blue,
+      bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.redAccent,selectedItemColor: wigi.Red,unselectedItemColor: wigi.Blue,elevation: 2.0,
         currentIndex: _currentIndex,
         onTap: _onTabTapped,
         items: [
