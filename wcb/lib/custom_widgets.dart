@@ -165,8 +165,9 @@ class _MyTextInputState extends State<MyTextInput> {
 class MyCard extends StatelessWidget {
   final String imagename;
   final String Huduma;
+  final VoidCallback function;
 
-  MyCard({required this.imagename, required this.Huduma});
+  MyCard({required this.imagename, required this.Huduma, required this.function});
 
   @override
   Widget build(BuildContext context) {
@@ -174,8 +175,9 @@ class MyCard extends StatelessWidget {
     final screenheight = MediaQuery.of(context).size.height;
 
     return InkWell(
-        onTap: () async {},
+        onTap: function,
         child: Card(
+
           shadowColor: Colors.grey,
           child: Padding(
             padding: EdgeInsets.all(4),
@@ -247,8 +249,6 @@ class Searchbar extends StatelessWidget {
   }
 }
 
-
-
 class Badges extends StatelessWidget {
   final IconData iconi;
   final String head;
@@ -258,25 +258,42 @@ class Badges extends StatelessWidget {
     required this.iconi,
     required this.head,
     required this.explanation,
-});
+  });
 
   @override
   Widget build(BuildContext context) {
-
-      var screenwidth = MediaQuery.of(context).size.width;
-      var screenheight = MediaQuery.of(context).size.height;
-
+    var screenwidth = MediaQuery.of(context).size.width;
+    var screenheight = MediaQuery.of(context).size.height;
 
     return MaterialApp(
       home: Row(
-        children: [Container(width: screenwidth * 0.01),
-          Icon(iconi, color: Blue,),
-          Container(width: screenwidth * 0.01),
-          Column(crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(width: screenwidth * 0.07),
+          Icon(
+            iconi,
+            color: Blue,
+
+          ),
+          Container(width: screenwidth * 0.05),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(head, style: TextStyle(fontWeight: FontWeight.bold, fontSize: screenheight * 0.02, color: Blue),),
-              Text(explanation, style: TextStyle(fontWeight: FontWeight.bold, fontSize: screenheight * 0.02, color: Colors.black54),),
-          ],)
+              Text(
+                head,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: screenheight * 0.02,
+                    color: Blue),
+              ),
+              Text(
+                explanation,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: screenheight * 0.02,
+                    color: Colors.black54),
+              ),
+            ],
+          )
         ],
       ),
     );

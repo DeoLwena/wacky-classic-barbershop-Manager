@@ -18,18 +18,18 @@ class InsideServices extends StatelessWidget {
             Container(height: screenheight * 0.02),
             Row(
               children: [Flexible(child:
-                wigi.MyCard(imagename: 'Ras.png', Huduma: 'Hair services'),),
+                wigi.MyCard(imagename: 'Ras.png', Huduma: 'Hair services',function: (){}),),
 
-                Flexible(child: wigi.MyCard(imagename: 'massage.png', Huduma: 'Skin'))
+                Flexible(child: wigi.MyCard(imagename: 'massage.png', Huduma: 'Skin',function: (){}))
               ],
             ),
 
             Row(
               children: [Flexible(child:
-                wigi.MyCard(imagename: 'kucha.png', Huduma: 'Nails'),),
+                wigi.MyCard(imagename: 'kucha.png', Huduma: 'Nails',function: (){}),),
 
                 Flexible(child:wigi.MyCard(
-                    imagename: 'haircut colored.png', Huduma: 'Hair Cuts')
+                    imagename: 'haircut colored.png', Huduma: 'Hair Cuts',function: (){})
                 ),],
             )
           ],
