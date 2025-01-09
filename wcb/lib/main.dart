@@ -10,6 +10,7 @@ import 'Screens/Login/forgotpasswordManager.dart';
 import 'Screens/Login/recoverycodeManager.dart';
 import 'Screens/Login/changepasswordManager.dart';
 import 'Screens/apps/home.dart';
+import 'screens/apps/services/HairServices.dart';
 void main() {
   runApp(const WcB());
 }
@@ -35,6 +36,7 @@ class WcB extends StatelessWidget {
         '/forgotpasswordManager':(context) => Recoverym(),
         '/recoverycodeManager':(context) => Confirmationm(),
         '/changepasswordmanager':(context) => Newpasswordm(),
+        '/HairServices':(context)=> Hairservices(),
         '/home':(context) => Home(),
 
       },

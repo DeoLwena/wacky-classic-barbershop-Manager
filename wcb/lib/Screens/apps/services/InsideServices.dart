@@ -1,36 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:wcb/custom_widgets.dart' as wigi;
+import 'HairServices.dart';
 
 class InsideServices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    final screenheight =MediaQuery.of(context).size.height;
-    final screenwidth =MediaQuery.of(context).size.width;
+    final screenheight = MediaQuery.of(context).size.height;
+    final screenwidth = MediaQuery.of(context).size.width;
 
     return MaterialApp(
       home: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [Container(height: screenheight * 0.025),
-
+          children: [
+            Container(height: screenheight * 0.025),
             Container(height: screenheight * 0.02),
             Row(
-              children: [Flexible(child:
-                wigi.MyCard(imagename: 'Ras.png', Huduma: 'Hair services',function: (){}),),
-
-                Flexible(child: wigi.MyCard(imagename: 'massage.png', Huduma: 'Skin',function: (){}))
+              children: [
+                Flexible(
+                  child: wigi.MyCard(
+                      imagename: 'Ras.png',
+                      Huduma: 'Hair services',
+                      function: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Hairservices()));
+                      }),
+                ),
+                Flexible(
+                    child: wigi.MyCard(
+                        imagename: 'massage.png',
+                        Huduma: 'Skin',
+                        function: () {}))
               ],
             ),
-
             Row(
-              children: [Flexible(child:
-                wigi.MyCard(imagename: 'kucha.png', Huduma: 'Nails',function: (){}),),
-
-                Flexible(child:wigi.MyCard(
-                    imagename: 'haircut colored.png', Huduma: 'Hair Cuts',function: (){})
-                ),],
+              children: [
+                Flexible(
+                  child: wigi.MyCard(
+                      imagename: 'kucha.png', Huduma: 'Nails', function: () {}),
+                ),
+                Flexible(
+                    child: wigi.MyCard(
+                        imagename: 'haircut colored.png',
+                        Huduma: 'Hair Cuts',
+                        function: () {})),
+              ],
             )
           ],
         ),
