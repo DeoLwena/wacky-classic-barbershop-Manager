@@ -299,3 +299,42 @@ class Badges extends StatelessWidget {
     );
   }
 }
+
+class mydropdown extends StatefulWidget {
+final List<String> listname;
+
+mydropdown({required this.listname});
+
+  @override
+  State<mydropdown> createState() => _mydropdownState();
+}
+
+class _mydropdownState extends State<mydropdown> {
+  String? _selectedItem; //declared the -selected item
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButtonFormField<String>(
+      items: widget.listname.map((String item) {
+        return DropdownMenuItem<String>(
+          value: item,
+          child: Text(item),
+        );
+      }).toList(),
+      onChanged: (value) {
+        setState(() {
+          _selectedItem = value;
+        });
+      },
+      validator: (value){
+        if(value == null){
+          return 'weka chaguo';
+        }
+        return null;
+      },
+    decoration: InputDecoration(
+      labelText: 'Weka Chaguo',
+      border: OutlineInputBorder(),
+    ),);
+  }
+}

@@ -39,31 +39,15 @@ class _MyFormState extends State<MyForm> {
     return Scaffold(
         appBar: wigi.InsideAppBar(rangi: Colors.white),
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(30.0),
           child: Form(
               key: _formkey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  //Dropdownbuttonformfield for selection
-                  DropdownButtonFormField<String>(
-                      items: _levelone.map((String item) {
-                        return DropdownMenuItem<String>(
-                          value: item,
-                          child: Text(item),
-                        );
-                      }).toList(),
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedItem = value;
-                        });
-                      },
-                      validator: (value){
-                        if(value == null){
-                          return 'weka chaguo';
-                        }
-                        return null;
-                      },),
+                  wigi.mydropdown(listname: _levelone),
+                  SizedBox(height: screenheight*0.05,),
+                  wigi.mydropdown(listname: _leveltwo),
                   SizedBox(height: screenheight*0.05,),
                   wigi.CustomButton(rangi: wigi.Blue, neno: 'Hifadhi', bonyeza: (){})
                 ],
