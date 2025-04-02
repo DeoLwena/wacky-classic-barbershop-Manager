@@ -20,8 +20,7 @@ class _InsideHomeState extends State<InsideHome> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children:[ wigi.Searchbar(hint: 'Search',),Container(height: screenheight*0.05),
           Column(
-            children: [
-              Row(children: [
+            children: [              Row(children: [
                 Container(width: screenwidth * 0.03,),
                 Flexible(
                   child: Text(
@@ -48,7 +47,8 @@ class _InsideHomeState extends State<InsideHome> {
               Row(
                 children: [
                   Flexible(child: wigi.MyCard(imagename: 'settings.jpg', Huduma: 'Settings')),
-                  Flexible(child: wigi.MyCard(imagename: 'alpha.png', Huduma: 'Log Out'))
+                  Flexible(child: wigi.
+                  MyCard(imagename: 'alpha.png', Huduma: 'Log Out'))
                 ],
               ),
             ],
