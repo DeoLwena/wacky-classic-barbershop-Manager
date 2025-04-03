@@ -43,11 +43,22 @@ class InsideSettings extends StatelessWidget {
             )
           ],
         ),
+
         Container(height: screenheight* 0.03,),
         Container(color: Colors.black38,height: screenheight *0.001,),
         Container(height: screenheight* 0.03,),
+
         wigi.Badges(iconi: CupertinoIcons.sun_min_fill,head: 'Theme',explanation: 'Change light mode (dark/light)',),
         Container(height: screenheight* 0.03,),
+        wigi.Badges(iconi: Icons.account_box,head: 'Profile name',explanation: 'Change Profile name',),
+        Container(height: screenheight* 0.03,),
+        wigi.Badges(iconi: Icons.email,head: 'e- Mail',explanation: 'Change e-mail',),
+        Container(height: screenheight* 0.03,),
+        wigi.Badges(iconi: CupertinoIcons.phone_circle_fill,head: 'Phone number ',explanation: 'Change phone number',),
+        Container(height: screenheight* 0.03,),
+        wigi.Badges(iconi: CupertinoIcons.padlock_solid,head: 'Passwords ',explanation: 'Change password',),
+        Container(height: screenheight* 0.03,),
+        wigi.Badges(iconi: Icons.output,head: 'Log out ',explanation: 'Loging out',),
       ]),
     ));
   }

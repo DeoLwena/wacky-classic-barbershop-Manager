@@ -55,6 +55,7 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../../../../src/flutter/packages/flutter/lib" />
+              <option value="$PROJECT_DIR$/../../../../../../src/flutter/packages/flutter/lib" />
             </list>
           </value>
         </entry>
@@ -69,6 +70,8 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../../../../src/flutter/packages/flutter_test/lib" />
+              <option value="$PROJECT_DIR$/../../../../../../src/flutter/packages/flutter_test/lib" />
+
             </list>
           </value>
         </entry>
@@ -132,6 +135,7 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../../../../src/flutter/bin/cache/pkg/sky_engine/lib" />
+              <option value="$PROJECT_DIR$/../../../../../../src/flutter/bin/cache/pkg/sky_engine/lib" />
             </list>
           </value>
         </entry>
@@ -221,6 +225,9 @@
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/packages/flutter/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/packages/flutter_test/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../../src/flutter/bin/cache/pkg/sky_engine/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../../src/flutter/packages/flutter/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../../../src/flutter/packages/flutter_test/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
